@@ -1,0 +1,41 @@
+{
+  "investments": [
+    {
+      "id": 1,
+      "symbol": "AAPL",
+      "totalQuantity": 20,
+      "equityValue": 2500,
+      "pricePerShare": 125
+    },
+    {
+      "id": 2,
+      "symbol": "TSLA",
+      "totalQuantity": 5,
+      "equityValue": 3000,
+      "pricePerShare": 600
+    },
+    {
+      "id": 3,
+      "symbol": "AMZN",
+      "totalQuantity": 1.38461538,
+      "equityValue": 4500,
+      "pricePerShare": 150
+    },
+    {
+      "symbol": "UNILEVER",
+      "totalQuantity": 20,
+      "equityValue": 1000,
+      "pricePerShare": 100,
+      "createdAt": 1645613665416,
+      "id": 4
+    },
+    {
+      "symbol": "NBC",
+      "totalQuantity": 40,
+      "equityValue": 2450,
+      "pricePerShare": 150,
+      "createdAt": 1645616257692,
+      "id": 5
+    }
+  ]
+}
