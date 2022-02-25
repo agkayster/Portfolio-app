@@ -1,4 +1,5 @@
 const jsonServer = require('json-server');
+const auth = require('json-server-auth');
 const server = jsonServer.create();
 const router = jsonServer.router('src/db.json');
 const middlewares = jsonServer.defaults();
@@ -21,6 +22,12 @@ server.use((req, res, next) => {
 	// Continue to JSON Server router
 	next();
 });
+
+// /!\ Bind the router db to the app
+server.db = router.db;
+
+// You must apply the auth middleware before the router
+server.use(auth);
 
 // Use default router
 server.use(router);

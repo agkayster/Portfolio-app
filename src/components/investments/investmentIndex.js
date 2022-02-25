@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { axiosInstance } from '../Utils/API';
+import { axiosInstance } from '../../Utils/API';
+
 import _ from 'lodash';
 
 const log = console.log.bind(document);
@@ -91,7 +92,7 @@ const Investments = () => {
 		setInput(value);
 	};
 
-	const handleInputSubmit = (e) => {
+	const handlePercentageLoanInputSubmit = (e) => {
 		e.preventDefault();
 		const newValue = +input;
 
@@ -117,8 +118,10 @@ const Investments = () => {
 
 	if (investmentsData.length === 0) return <h4>Loading...</h4>;
 	return (
-		<>
-			<h4 className='portfolios mt-3'>Portfolios</h4>
+		<div className='portfolio-index px-3 pt-3 mb-0'>
+			<h4 className='portfolios bg-secondary text-white ps-2 pb-2 pt-2'>
+				Portfolios
+			</h4>
 			<select
 				className='form-select w-50'
 				aria-label='portfolio-select'
@@ -129,8 +132,8 @@ const Investments = () => {
 					</option>
 				))}
 			</select>
-			<table className='table mt-4'>
-				<thead>
+			<table className='table table-hover table-striped mt-4'>
+				<thead className='table-head table-primary'>
 					<tr>
 						<th scope='col'>S/No</th>
 						<th scope='col'>Symbol</th>
@@ -160,75 +163,90 @@ const Investments = () => {
 					)}
 				</tbody>
 			</table>
-			<p className='totalValue mt-4'>
-				Total Equity Value: <span>₦{sumEquityValue}</span>
-			</p>
+			<div className='equity bg-success text-white w-25 ps-3 pt-3 pb-1 rounded'>
+				<h4 className='equity-value mb-0'>₦{sumEquityValue}</h4>
+				<p className='totalEquityValue mt-0'>Total Equity Value</p>
+			</div>
 
-			<div className='field-body'>
-				<div className='field'>
-					<div className='control'>
-						<Link to='/portfolio/InvestmentsNew'>
-							<button className='btn btn-primary'>
-								Add Portfolio
-							</button>
-						</Link>
-					</div>
+			<Link to='/portfolio/InvestmentsNew'>
+				<button className='btn btn-primary mt-3'>Add Portfolio</button>
+			</Link>
+
+			<hr />
+			<div className='loan d-flex flex-row justify-content-between'>
+				<div className='loan-buttons mt-2 mb-2'>
+					<p className='loan-description bg-secondary text-white h-50 px-2 pt-2 pb-2'>
+						Click on any of the buttons below to get your loan value
+					</p>
+					<button
+						className='btn btn-primary'
+						type='button'
+						onClick={sixtyPercentCalc}>
+						60%
+					</button>
+				</div>
+
+				<p>OR</p>
+				<div>
+					<p className='bg-secondary text-white h-50 px-2 pt-3'>
+						Specify the percentage of your total equity value you
+						want to loan:{' '}
+					</p>
+					<form
+						onSubmit={handlePercentageLoanInputSubmit}
+						className='form-percentage d-flex flex-row'>
+						<input
+							type='text'
+							className='form-control w-50 mt-2'
+							placeholder='e.g 15'
+							value={input}
+							onChange={handleInputChange}
+						/>
+						<button
+							type='submit'
+							className='btn btn-primary mt-2 ms-2'>
+							Submit
+						</button>
+					</form>
+				</div>
+			</div>
+
+			<div className='loan-value d-flex flex-row justify-content-between mt-4 '>
+				<div className='equity-loan bg-warning w-25 ps-3 pt-4 rounded'>
+					<h4 className='mb-0 loan-value'>₦{loanValue}</h4>
+					<p className='loan-text'>Active Loan value</p>
+				</div>
+				<div className='equity-balance bg-success text-white w-25 ps-3 pt-3 rounded'>
+					<h4 className='mb-0 loan-balance'>₦{balance}</h4>
+					<p className='balance-text'>
+						Total Equity Value Balance after Loan
+					</p>
 				</div>
 			</div>
 			<hr />
-			<p className='loan-description mt-3 mb-0'>
-				Click on any of the buttons below to get your loan value
-			</p>
-			<div className='loan-buttons mt-2 mb-2'>
-				<button
-					className='btn btn-primary'
-					type='button'
-					onClick={sixtyPercentCalc}>
-					60%
-				</button>
-			</div>
-			<p>OR</p>
-			<form onSubmit={handleInputSubmit}>
-				Specify the percentage of your total equity value you want to
-				loan:{' '}
-				<input
-					type='text'
-					className='form-control w-25 mt-2'
-					placeholder='e.g 15'
-					value={input}
-					onChange={handleInputChange}
-				/>
-				<button type='submit' className='btn btn-primary mt-3'>
-					Submit
-				</button>
-			</form>
-
-			<div className='loan-value mt-4'>
-				<p>
-					Active Loan value: ₦{loanValue}{' '}
-					<span className='ms-5'>
-						Total Equity Value Balance after Loan: ₦{balance}
-					</span>
-				</p>
-			</div>
-			<hr />
 			<div>
-				<h5>Pick a payment plan in Months</h5>
+				<h5 className='bg-secondary text-white h-25 px-2 pt-1'>
+					Pick a payment plan in Months
+				</h5>
 				<select
-					className='form-select w-25'
+					className='form-select w-25 mt-3'
 					aria-label='paymentPlan-select'
 					onChange={handlePaymentPlanChange}>
-					{paymentPeriod.map((item) => (
+					{_.map(paymentPeriod, (item) => (
 						<option key={item} value={item}>
 							{item}
 						</option>
 					))}
 				</select>
-				<p className='payment-month mt-3 mb-5'>
-					Payment Per Month: ₦{paymentPerMonth}
-				</p>
+				<div className='loan-payment mt-3 bg-danger text-white w-25 ps-3 pt-2 rounded'>
+					<h4 className='paymentMonthlyFigure mb-0'>
+						₦{paymentPerMonth}
+					</h4>
+					<p className='payment-month mt-0'>Payment Per Month</p>
+				</div>
 			</div>
-		</>
+			<hr />
+		</div>
 	);
 };
 

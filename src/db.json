@@ -37,5 +37,47 @@
       "createdAt": 1645616257692,
       "id": 5
     }
+  ],
+  "users": [
+    {
+      "email": "owoye@gmail.com",
+      "password": "$2a$10$1NnJVaV6TLUwjSa01Bkqxu5NlJp9.XK6i8fyI7Fc02mq7EtLy3zXm",
+      "username": "owoye",
+      "passwordConfirmation": "pass",
+      "createdAt": 1645822984180,
+      "id": 1
+    },
+    {
+      "email": "ejike@gmail.com",
+      "password": "$2a$10$A4M4FShTjlWXlPPoBGteces.bt5hvXS2fZsJjOsv9FiZJ6lyQf3Pq",
+      "username": "chiboka04",
+      "passwordConfirmation": "pass",
+      "createdAt": 1645823477381,
+      "id": 2
+    },
+    {
+      "email": "bruno@gmail.com",
+      "password": "$2a$10$ynaFNlcZcLuvFAb7mNVTfOO5ubUtpU8PbRTE2bhGB7lcv.9KL4Cb6",
+      "username": "bruno",
+      "passwordConfirmation": "pass",
+      "createdAt": 1645823511178,
+      "id": 3
+    },
+    {
+      "email": "banji@gmail.com",
+      "password": "$2a$10$Z1IYMbq0e8qCXy7Ullr9puc6hKwIv2G9IF3kjAEpmk2ma0.UKR9Fq",
+      "username": "banji",
+      "passwordConfirmation": "pass",
+      "createdAt": 1645823610106,
+      "id": 4
+    },
+    {
+      "email": "ada@gmail.com",
+      "password": "$2a$10$M0YLSEp4gWt0eYzNOE.uN.KvvWjMRb9OSIPLDuUq6ZaWpuUF2BnqW",
+      "username": "ada",
+      "passwordConfirmation": "pass",
+      "createdAt": 1645823968656,
+      "id": 5
+    }
   ]
 }

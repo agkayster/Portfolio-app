@@ -20,3 +20,59 @@ code {
 	font-family: 'Roboto Serif', sans-serif;
 	box-sizing: border-box;
 }
+
+.loan-description {
+	margin-top: -10px;
+}
+
+.portfolio-index {
+	height: 100%;
+	background-color: WhiteSmoke;
+	overflow-y: hidden;
+}
+
+.first-portfolio-section {
+	background-color: rgba(232, 232, 232, 0.3);
+	height: 60vh;
+}
+
+.clearfix {
+	position: relative;
+}
+
+.portfolio-img {
+	position: absolute;
+	right: 80px;
+	top: 40px;
+	border-radius: 15px;
+}
+
+.portfolio-header {
+	position: absolute;
+	top: 100px;
+	left: 80px;
+}
+.portfolio-paragraph {
+	position: absolute;
+	top: 145px;
+	left: 80px;
+}
+
+.register-paragraph {
+	position: absolute;
+	top: 175px;
+	left: 80px;
+	background-color: orange;
+	width: 180px;
+	height: 50px;
+	padding: 15px 30px 5px;
+	border-radius: 8px;
+	cursor: pointer;
+}
+
+.fa-star {
+	color: orange;
+	position: relative;
+	top: 138px;
+	left: 420px;
+}

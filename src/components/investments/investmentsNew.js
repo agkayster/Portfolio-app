@@ -41,21 +41,11 @@ const InvestmentsNew = () => {
 		});
 	};
 
-	// const handleArrayChange = (e) => {
-	// 	const { name, value } = e.target;
-	// 	setFormData({ ...formData, [name]: value.split(',') });
-	// };
-
-	// const handleCheckbox = (e) => {
-	// 	const { checked, name } = e.target;
-	// 	setFormData({ ...formData, [name]: checked });
-	// };
-
 	log('get errors1 =>', errors);
 	log('get form data =>', formData);
 
 	return (
-		<>
+		<div className='px-3 pt-3 mb-0'>
 			<form className='mt-4' onSubmit={handleSubmit}>
 				<div className='mb-3'>
 					<label htmlFor='inputSymbol' className='form-label'>
@@ -146,7 +136,7 @@ const InvestmentsNew = () => {
 					</button>
 				</div>
 			</form>
-		</>
+		</div>
 	);
 };
 
