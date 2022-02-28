@@ -33,9 +33,9 @@ const Navbar = () => {
 	};
 
 	return (
-		<nav className='navbar sticky-top navbar-expand-lg navbar-light bg-light'>
+		<nav className='navbar sticky-top navbar-expand-lg navbar-light'>
 			<div className='container'>
-				<Link to='/' className='navbar-brand'>
+				<Link to='/' className='navbar-brand text-white'>
 					PorfolioX
 				</Link>
 				<button
@@ -64,13 +64,16 @@ const Navbar = () => {
 						{!userName.username && (
 							<Link
 								to='/login'
-								className='nav-link nav-login'
+								className='nav-link nav-login text-white'
 								aria-current='page'>
 								Sign-in
 							</Link>
 						)}
 						{userName.username && (
-							<a onClick={logout} href='/' className='nav-link'>
+							<a
+								onClick={logout}
+								href='/'
+								className='nav-link text-white'>
 								Logout
 							</a>
 						)}

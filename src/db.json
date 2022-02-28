@@ -54,6 +54,14 @@
       "passwordConfirmation": "pass",
       "createdAt": 1645871363321,
       "id": 2
+    },
+    {
+      "email": "bruno@gmail.com",
+      "password": "$2a$10$FyHU42qbfOHAT1kCkPDdc.eKpTXI3xj8klhoWrmvREJs.XuzbOV4u",
+      "username": "bruno",
+      "passwordConfirmation": "pass",
+      "createdAt": 1646082002917,
+      "id": 3
     }
   ]
 }
