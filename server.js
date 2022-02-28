@@ -26,7 +26,6 @@ server.use((req, res, next) => {
 // /!\ Bind the router db to the app
 server.db = router.db;
 
-// You must apply the auth middleware before the router
 server.use(auth);
 
 // Use default router

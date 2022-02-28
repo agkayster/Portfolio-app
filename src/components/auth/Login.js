@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import { useLocalStorage } from '../../useLocalStorage';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
 
@@ -8,7 +9,7 @@ const log = console.log.bind(document);
 toast.configure();
 
 const Login = () => {
-	const [formData, setFormData] = useState({});
+	const [formData, setFormData] = useLocalStorage('formData', {});
 	const [error, setError] = useState('');
 
 	const navigate = useNavigate();
@@ -32,7 +33,7 @@ const Login = () => {
 				navigate('/portfolio');
 			})
 			.catch(() => {
-				setError('Invalid credentials'); // display an error
+				setError('Invalid email or password'); // display an error
 			});
 	};
 
@@ -84,6 +85,7 @@ const Login = () => {
 						value={formData.password || ''}
 						onChange={handleChange}
 					/>
+					{error && <p className='small text-danger'>{error}</p>}
 				</div>
 				<button type='submit' className='btn btn-primary'>
 					Submit

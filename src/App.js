@@ -4,16 +4,18 @@ import Investments from './components/investments/investmentIndex';
 import InvestmentsNew from './components/investments/investmentsNew';
 import Register from './components/auth/Register';
 import Home from './components/pages/Home';
+import Navbar from './components/common/Navbar';
+import Login from './components/auth/Login';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { faFontAwesome } from '@fortawesome/free-regular-svg-icons';
-import Login from './components/auth/Login';
 
 library.add(fas, faFontAwesome);
 function App() {
 	return (
-		<Router>
-			<div className='container-fluid'>
+		<div className='container-fluid'>
+			<Router>
+				<Navbar />
 				<Routes>
 					<Route
 						path='/portfolio/InvestmentsNew'
@@ -24,8 +26,8 @@ function App() {
 					<Route path='/login' element={<Login />} />
 					<Route exact path='/' element={<Home />} />
 				</Routes>
-			</div>
-		</Router>
+			</Router>
+		</div>
 	);
 }
 

@@ -5,8 +5,6 @@ import axios from 'axios';
 
 const log = console.log.bind(document);
 
-
-
 const Register = () => {
 	const [formData, setFormData] = useState({});
 	const [errors, setErrors] = useState({});
@@ -30,12 +28,11 @@ const Register = () => {
 				.post('http://localhost:4000/register', formData)
 
 				.then((res) => {
-					
 					navigate('/login');
 				});
 		} catch (err) {
-			setErrors(err.response.data.errors);
-			log('get errors =>', err);
+			setErrors({ errors: err.response.data.errors });
+			log('get errors =>', errors);
 		}
 	};
 
@@ -58,6 +55,11 @@ const Register = () => {
 						value={formData.username || ''}
 						onChange={handleChange}
 					/>
+					{errors.username && (
+						<p className='small text-danger'>
+							Please put in another username
+						</p>
+					)}
 				</div>
 				<div className='mb-3'>
 					<label htmlFor='email' className='form-label'>

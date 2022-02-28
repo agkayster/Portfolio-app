@@ -31,6 +31,12 @@ code {
 	overflow-y: hidden;
 }
 
+.nav-register {
+	background-color: #fbab7e;
+	background-image: linear-gradient(62deg, #fbab7e 0%, #f7ce68 100%);
+	border-radius: 8px;
+}
+
 .first-portfolio-section {
 	background-color: rgba(232, 232, 232, 0.3);
 	height: 60vh;
@@ -62,7 +68,8 @@ code {
 	position: absolute;
 	top: 175px;
 	left: 80px;
-	background-color: orange;
+	background-color: #fbab7e;
+	background-image: linear-gradient(62deg, #fbab7e 0%, #f7ce68 100%);
 	width: 180px;
 	height: 50px;
 	padding: 15px 30px 5px;
@@ -75,4 +82,59 @@ code {
 	position: relative;
 	top: 138px;
 	left: 420px;
+}
+
+.second-portfolio-section {
+	color: white;
+	background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+		url('./assets/portfolio_background2-img.jpeg') no-repeat fixed;
+	background-size: cover;
+	height: 50vh;
+}
+
+.third-portfolio-section {
+	background-color: white;
+	height: 50vh;
+}
+
+.connected-text {
+	font-size: 15px;
+}
+
+.register-paragraph2 {
+	background-color: #fbab7e;
+	background-image: linear-gradient(62deg, #fbab7e 0%, #f7ce68 100%);
+	width: 170px;
+	height: 45px;
+	padding: 10px 30px 5px;
+	border-radius: 8px;
+	cursor: pointer;
+}
+
+.manage-paragraph {
+	background-color: #8bc6ec;
+	background-image: linear-gradient(135deg, #8bc6ec 0%, #9599e2 100%);
+	width: 170px;
+	height: 45px;
+	padding: 10px 30px 5px;
+	border-radius: 8px;
+	cursor: pointer;
+}
+
+.fourth-portfolio-section {
+	background-image: radial-gradient(
+		circle farthest-corner at 10% 20%,
+		rgba(234, 249, 249, 0.67) 0.1%,
+		rgba(239, 249, 251, 0.63) 90.1%
+	);
+	height: 25vh;
+}
+
+.fifth-portfolio-section {
+	height: 40vh;
+}
+
+hr.horizontal-line {
+	width: 90vw;
+	text-align: center;
 }
