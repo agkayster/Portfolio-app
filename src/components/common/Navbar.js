@@ -1,13 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { axiosInstance } from '../../Utils/API';
 
-const log = console.log.bind(document);
-
 const Navbar = () => {
 	const [auth, setAuth] = useState(null);
-	const [userName, setUserName] = useState(() => {
+	const [userName] = useState(() => {
 		const saved = localStorage.getItem('formData');
 		const initialValue = JSON.parse(saved);
 		return initialValue || {};
@@ -20,7 +18,6 @@ const Navbar = () => {
 			try {
 				// url from the json-server db //
 				let res = await axiosInstance.get('/users');
-				log('get res data =>', res.data);
 				setAuth(res.data);
 			} catch (err) {
 				console.log(err);
@@ -35,10 +32,8 @@ const Navbar = () => {
 		localStorage.removeItem('formData');
 	};
 
-	log('get user name =>', userName);
-
 	return (
-		<nav className='navbar navbar-expand-lg navbar-light bg-light'>
+		<nav className='navbar sticky-top navbar-expand-lg navbar-light bg-light'>
 			<div className='container'>
 				<Link to='/' className='navbar-brand'>
 					PorfolioX
@@ -56,24 +51,7 @@ const Navbar = () => {
 				<div
 					className='collapse navbar-collapse'
 					id='navbarSupportedContent'>
-					<ul className='navbar-nav me-auto mb-2 mb-lg-0'>
-						<li className='nav-item'>
-							<Link
-								to='/about'
-								className='nav-link'
-								aria-current='page'>
-								About
-							</Link>
-						</li>
-						{/* <li className='nav-item'>
-							<Link
-								to='/portfolio'
-								className='nav-link'
-								aria-current='page'>
-								Portfolio
-							</Link>
-						</li> */}
-					</ul>
+					<ul className='navbar-nav me-auto mb-2 mb-lg-0'></ul>
 					<div className='d-flex'>
 						{!userName.username && (
 							<Link

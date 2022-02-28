@@ -2,9 +2,6 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-const log = console.log.bind(document);
-// import Auth from '../../lib/Auth';
-
 const InvestmentsNew = () => {
 	const [formData, setFormData] = useState({});
 	const [errors, setErrors] = useState({});
@@ -19,7 +16,6 @@ const InvestmentsNew = () => {
 				.then(() => navigate('/portfolio'));
 		} catch (err) {
 			setErrors(err.response.data.errors);
-			log('get errors =>', err);
 		}
 	};
 
@@ -41,9 +37,6 @@ const InvestmentsNew = () => {
 		});
 	};
 
-	log('get errors1 =>', errors);
-	log('get form data =>', formData);
-
 	return (
 		<div className='px-3 pt-3 mb-0'>
 			<form className='mt-4' onSubmit={handleSubmit}>
@@ -61,11 +54,6 @@ const InvestmentsNew = () => {
 						value={formData.symbol || ''}
 						onChange={handleChange}
 					/>
-					{/* {errors.symbol && (
-						<small className='help is-danger'>
-							{errors.symbol}
-						</small>
-					)} */}
 				</div>
 
 				<div className='mb-3'>
@@ -82,11 +70,6 @@ const InvestmentsNew = () => {
 						value={formData.totalQuantity || ''}
 						onChange={handleChange}
 					/>
-					{/* {errors.totalQuantity && (
-						<small className='help is-danger'>
-							{errors.totalQuantity}
-						</small>
-					)} */}
 				</div>
 
 				<div className='mb-3'>
@@ -103,11 +86,6 @@ const InvestmentsNew = () => {
 						value={formData.equityValue || ''}
 						onChange={handleChange}
 					/>
-					{/* {errors.equityValue && (
-						<small className='help is-danger'>
-							{errors.equityValue}
-						</small>
-					)} */}
 				</div>
 
 				<div className='mb-3'>
@@ -124,11 +102,6 @@ const InvestmentsNew = () => {
 						value={formData.pricePerShare || ''}
 						onChange={handleChange}
 					/>
-					{/* {errors.pricePerShare && (
-						<small className='help is-danger'>
-							{errors.pricePerShare}
-						</small>
-					)} */}
 				</div>
 				<div className='control'>
 					<button type='submit' className='btn btn-primary'>

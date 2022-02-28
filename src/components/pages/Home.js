@@ -1,44 +1,12 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import porfolioXImage from '../../assets/portfolioX-img.jpeg';
-import blog from '../../assets/blog-portfolioX-logo.jpeg';
-import callCenter from '../../assets/call-center-logo-portfolioX.jpeg';
-import community from '../../assets/community-portfolioX-logo.jpeg';
-import careers from '../../assets/careers-portfoliox-logo.jpeg';
+import { homeImages } from '../../Utils/HelperMethods';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
-const log = console.log.bind(document);
+import { HomeImagesList } from '../pages/HomeImagesList';
 
 function Home() {
-	const homeImages = [
-		{
-			id: 1,
-			image: blog,
-			header: 'PortfolioX Blog',
-			text: "News and Updates from the world's leading shares and assets exchange.",
-		},
-		{
-			id: 2,
-			image: callCenter,
-			header: '24/7 Support',
-			text: 'Got a problem? Just get in touch, Our support team is available round the clock.',
-		},
-		{
-			id: 3,
-			image: community,
-			header: 'Community',
-			text: 'PortfolioX is global. Join the discussion in our worldwide communities.',
-		},
-		{
-			id: 4,
-			image: careers,
-			header: 'Careers',
-			text: 'Help build the future of technology. Start your new career at PortfolioX',
-		},
-	];
 	const [images] = useState(homeImages);
-
-	log('get images =>', images);
 
 	return (
 		<div className='home container-fluid'>
@@ -88,45 +56,7 @@ function Home() {
 					<h2 className='portfolio-text3 position-absolute top-0 start-50 translate-middle mt-5'>
 						Get connected. Stay connected.
 					</h2>
-					<ul className='list-inline d-lg-inline-flex flex-row justify-content-between mt-3 p-3 connect-logos'>
-						{images.map(({ image, header, text, id }) => {
-							if (id === 2 || id === 3 || id === 4) {
-								return (
-									<li key={id} className='me-2 '>
-										<img
-											src={image}
-											alt='all'
-											height={100}
-											width={100}
-										/>
-										<h6 className='ms-3 fw-bolder'>
-											{header}
-										</h6>
-										<p className='mt-3 ms-3 connected-text'>
-											{text}
-										</p>
-									</li>
-								);
-							} else if (id === 1) {
-								return (
-									<li key={id} className='me-2 p-2'>
-										<img
-											src={image}
-											alt='all'
-											height={50}
-											className='mt-4'
-										/>
-										<h6 className='mt-4 fw-bolder'>
-											{header}
-										</h6>
-										<p className='mt-3 connected-text'>
-											{text}
-										</p>
-									</li>
-								);
-							}
-						})}
-					</ul>
+					<HomeImagesList images={images} />
 				</div>
 			</div>
 			<div className='row fourth-portfolio-section'>

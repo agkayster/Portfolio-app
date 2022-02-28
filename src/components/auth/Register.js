@@ -37,7 +37,7 @@ const Register = () => {
 	};
 
 	return (
-		<div className='px-3 pt-3 mb-0'>
+		<div className='container-fluid px-3 pt-3 mb-0'>
 			<h2>Register</h2>
 			<p>Please sign up to be part of our community at PortfolioX</p>
 			<form className='mt-4' onSubmit={handleSubmit}>
