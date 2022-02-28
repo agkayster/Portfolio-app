@@ -87,6 +87,7 @@ const Login = () => {
 					/>
 					{error && <p className='small text-danger'>{error}</p>}
 				</div>
+
 				<button type='submit' className='btn btn-primary'>
 					Submit
 				</button>

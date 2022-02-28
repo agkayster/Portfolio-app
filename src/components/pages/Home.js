@@ -41,7 +41,7 @@ function Home() {
 	log('get images =>', images);
 
 	return (
-		<div>
+		<div className='home container-fluid'>
 			<div className='row first-portfolio-section'>
 				<div className='clearfix pt-2'>
 					<h2 className='portfolio-header'>
@@ -71,12 +71,12 @@ function Home() {
 					/>
 				</div>
 			</div>
-			<div className='row second-portfolio-section position-relative'>
+			<div className='row second-portfolio-section'>
 				<div className='col'>
-					<h2 className='portfolio-text2 position-absolute top-50 start-50 translate-middle'>
+					<h2 className='portfolio-text2'>
 						Trade, Monitor, Add and Loan.
 					</h2>
-					<p className='portfolio-paragraph2 position-absolute top-50 start-50 translate-middle mt-5'>
+					<p className='portfolio-paragraph2'>
 						PortfolioX gives you that convenience to trade, monitor,
 						add and loan money against your portfolio at your own
 						desired interest rate and re-payment plan.
@@ -88,7 +88,7 @@ function Home() {
 					<h2 className='portfolio-text3 position-absolute top-0 start-50 translate-middle mt-5'>
 						Get connected. Stay connected.
 					</h2>
-					<ul className='list-inline d-inline-flex flex-row justify-content-between mt-4 p-3'>
+					<ul className='list-inline d-lg-inline-flex flex-row justify-content-between mt-3 p-3 connect-logos'>
 						{images.map(({ image, header, text, id }) => {
 							if (id === 2 || id === 3 || id === 4) {
 								return (
@@ -129,12 +129,12 @@ function Home() {
 					</ul>
 				</div>
 			</div>
-			<div className='row fourth-portfolio-section position-relative'>
+			<div className='row fourth-portfolio-section'>
 				<div className='col'>
-					<h2 className='portfolio-text4 position-absolute top-50 start-50 translate-middle pb-5'>
+					<h2 className='portfolio-text4'>
 						Start managing your portfolio now
 					</h2>
-					<div className='reg-man d-flex flex-row position-absolute top-50 start-50 translate-middle mt-5'>
+					<div className='reg-man d-lg-inline-flex flex-row'>
 						<Link
 							to='/register'
 							className='register-paragraph2 text-decoration-none'
@@ -153,7 +153,7 @@ function Home() {
 			</div>
 
 			<div className='row fifth-portfolio-section pt-5 ps-5'>
-				<div className='col about'>
+				<div className='col-lg-3 about'>
 					<h5 className='portfolio-text5'>
 						<b>About Us</b>
 					</h5>
@@ -164,7 +164,7 @@ function Home() {
 						<li>Blog</li>
 					</ul>
 				</div>
-				<div className='col products'>
+				<div className='col-lg-3 products'>
 					<h5 className='portfolio-text6'>
 						<b>Products</b>
 					</h5>
@@ -175,7 +175,7 @@ function Home() {
 						<li>Card</li>
 					</ul>
 				</div>
-				<div className='col service'>
+				<div className='col-lg-3 service'>
 					<h5 className='portfolio-text7'>
 						<b>Service</b>
 					</h5>
@@ -186,7 +186,7 @@ function Home() {
 						<li>Affiliate</li>
 					</ul>
 				</div>
-				<div className='col support'>
+				<div className='col-lg-3 support'>
 					<h5 className='portfolio-text8'>
 						<b>Support</b>
 					</h5>
@@ -198,7 +198,9 @@ function Home() {
 					</ul>
 				</div>
 				<hr className='horizontal-line' />
-				<p className='text-center text-muted'>PortfolioX &copy; 2022</p>
+				<p className='text-lg-center text-muted copyright-text'>
+					PortfolioX &copy; 2022
+				</p>
 			</div>
 		</div>
 	);

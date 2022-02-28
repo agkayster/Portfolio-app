@@ -39,7 +39,7 @@ const Navbar = () => {
 
 	return (
 		<nav className='navbar navbar-expand-lg navbar-light bg-light'>
-			<div className='container-fluid'>
+			<div className='container'>
 				<Link to='/' className='navbar-brand'>
 					PorfolioX
 				</Link>
