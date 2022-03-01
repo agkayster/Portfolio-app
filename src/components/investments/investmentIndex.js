@@ -118,9 +118,7 @@ const Investments = () => {
 	if (investmentsData.length === 0) return <h4>Loading...</h4>;
 	return (
 		<div className='portfolio-index px-3 pt-3 mb-0'>
-			<h4 className='portfolios text-white ps-2 pb-2 pt-2'>
-				Portfolios
-			</h4>
+			<h4 className='portfolios text-white ps-2 pb-2 pt-2'>Portfolios</h4>
 			<InvestmentSelectOptions
 				handleChange={handleChange}
 				getInvestmentsOptions={getInvestmentsOptions}
@@ -147,8 +145,8 @@ const Investments = () => {
 
 			<div className='loan-value d-flex flex-row justify-content-between mt-4 '>
 				<div className='equity-loan w-25 ps-3 pt-4 rounded'>
-					<h4 className='mb-0 loan-value'>₦{loanValue}</h4>
-					<p className='loan-text'>Active Loan value</p>
+					<h4 className='mb-0 loan-value text-white'>₦{loanValue}</h4>
+					<p className='loan-text text-white'>Active Loan value</p>
 				</div>
 				<div className='equity-balance text-white w-25 ps-3 pt-3 rounded'>
 					<h4 className='mb-0 loan-balance'>₦{balance}</h4>
