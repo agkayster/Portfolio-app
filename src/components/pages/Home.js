@@ -74,7 +74,7 @@ function Home() {
 
 						<Link
 							to='/login'
-							className='manage-paragraph ms-2 text-decoration-none'
+							className='manage-paragraph ms-4 text-decoration-none'
 							aria-current='page'>
 							Manage Now
 						</Link>
