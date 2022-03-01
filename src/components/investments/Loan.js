@@ -9,7 +9,7 @@ export const Loan = ({
 	return (
 		<div className='loan d-flex flex-row justify-content-between'>
 			<div className='loan-buttons mt-2 mb-2'>
-				<p className='loan-description text-white h-50 px-2 pt-2 pb-2'>
+				<p className='loan-description text-white h-50 px-2 pt-2'>
 					Click on any of the buttons below to get your loan value
 				</p>
 				<button
@@ -22,7 +22,7 @@ export const Loan = ({
 
 			<p>OR</p>
 			<div>
-				<p className='specify-percentage text-white h-50 px-2 pt-3'>
+				<p className='specify-percentage text-white h-50 px-2 pt-2 mt-0'>
 					Specify the percentage of your total equity value you want
 					to loan:{' '}
 				</p>

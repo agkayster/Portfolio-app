@@ -21,22 +21,26 @@ code {
 	box-sizing: border-box;
 }
 
-.loan-description {
+/* Loan Component */
+div > .loan-description {
 	margin-top: -10px;
 }
 
+/* InvestmentIndex Component */
 .portfolio-index {
 	height: 100%;
 	background-color: WhiteSmoke;
 	overflow-y: hidden;
 }
 
-.nav-register {
+/* Navbar Component */
+div > .nav-register {
 	background-color: #fbab7e;
 	background-image: linear-gradient(62deg, #fbab7e 0%, #f7ce68 100%);
 	border-radius: 8px;
 }
 
+/* Home Component */
 .first-portfolio-section {
 	background-color: rgba(232, 232, 232, 0.3);
 	height: 60vh;
@@ -148,7 +152,6 @@ code {
 .portfolio-text4 {
 	position: absolute;
 	top: 28px;
-	/* left: 320px; */
 	width: 100%;
 	text-align: center;
 }
@@ -170,6 +173,7 @@ hr.horizontal-line {
 	text-align: center;
 }
 
+/* Table Component */
 .table-head {
 	background-image: linear-gradient(
 		76.3deg,
@@ -359,8 +363,4 @@ hr.horizontal-line {
 	.home {
 		overflow-x: hidden;
 	}
-
-	/* ul.list-inline {
-		display: block;
-	} */
 }
