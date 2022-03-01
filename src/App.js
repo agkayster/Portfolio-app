@@ -1,19 +1,20 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import React, { Suspense } from 'react';
+import React, { Suspense, lazy } from 'react';
 
 // import Investments from './components/investments/investmentIndex';
 import InvestmentsNew from './components/investments/investmentsNew';
 import Register from './components/auth/Register';
-import Home from './components/pages/Home';
+// import Home from './components/pages/Home';
 import Navbar from './components/common/Navbar';
 import Login from './components/auth/Login';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { faFontAwesome } from '@fortawesome/free-regular-svg-icons';
 
-const Investments = React.lazy(() =>
+const Investments = lazy(() =>
 	import('./components/investments/investmentIndex')
 );
+const Home = lazy(() => import('./components/pages/Home'));
 
 library.add(fas, faFontAwesome);
 function App() {
