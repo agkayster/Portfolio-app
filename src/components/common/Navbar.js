@@ -36,7 +36,7 @@ const Navbar = () => {
 		<nav className='navbar sticky-top navbar-expand-lg navbar-light'>
 			<div className='container'>
 				<Link to='/' className='navbar-brand text-white'>
-					PorfolioX
+					PortfolioX
 				</Link>
 				<button
 					className='navbar-toggler'
