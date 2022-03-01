@@ -18,7 +18,7 @@ export const HomeImagesList = ({ images }) => {
 							<p className='mt-3 ms-3 connected-text'>{text}</p>
 						</li>
 					);
-				} else if (id === 1) {
+				} else {
 					return (
 						<li key={id} className='me-2 p-2'>
 							<img
