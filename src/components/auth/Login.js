@@ -12,7 +12,7 @@ const Login = () => {
 	const [formData, setFormData] = useLocalStorage('formData', {});
 	const [error, setError] = useState('');
 
-	const navigate = useNavigate();
+	// const navigate = useNavigate();
 
 	const handleChange = (e) => {
 		const { name, value } = e.target;
@@ -30,7 +30,7 @@ const Login = () => {
 			.then((res) => {
 				log('get res message =>', res.data.user.username);
 				toast(`Welcome ${res.data.user.username}`);
-				navigate('/portfolio');
+				window.location = '/portfolio';
 			})
 			.catch(() => {
 				setError('Invalid email or password'); // display an error
