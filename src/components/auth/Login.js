@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { useLocalStorage } from '../../useLocalStorage';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
 
-const log = console.log.bind(document);
 toast.configure();
 
 const Login = () => {
@@ -28,9 +26,9 @@ const Login = () => {
 		axios
 			.post('http://localhost:4000/login', formData)
 			.then((res) => {
-				log('get res message =>', res.data.user.username);
 				toast(`Welcome ${res.data.user.username}`);
-				window.location = '/portfolio';
+				// windows.location.pathname redirects to the path and refreshes the whole page//
+				window.location.pathname = '/portfolio';
 			})
 			.catch(() => {
 				setError('Invalid email or password'); // display an error

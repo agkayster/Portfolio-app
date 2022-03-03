@@ -113,8 +113,6 @@ const Investments = () => {
 		setBalance(getBalanceAfterLoan);
 	};
 
-	// log('get all investments =>', allInvestments);
-
 	if (investmentsData.length === 0) return <h4>Loading...</h4>;
 	return (
 		<div className='portfolio-index px-3 pt-3 mb-0'>
